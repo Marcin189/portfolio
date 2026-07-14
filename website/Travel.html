@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+        }
+    </style>
+</head>
+<body>
+
+<header class="container py-3">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+
+        <a href="index.html" class="mb-3 mb-md-0">
+            <img src="../Afbeeldingen/logo.png" alt="Logo" class="img-fluid" style="max-width:120px;">
+        </a>
+
+        <form id="searchForm" class="d-flex w-100 w-md-auto mb-3 mb-md-0 me-md-3">
+            <input class="form-control me-2" type="search" id="searchInput" placeholder="Zoek een pagina..." aria-label="Zoek">
+            <button class="btn btn-primary" type="submit">Zoeken</button>
+        </form>
+
+        <div class="d-flex flex-wrap justify-content-center">
+            <a href="index.html" class="btn btn-outline-primary me-2 mb-2">Home</a>
+            <a href="overmij.html" class="btn btn-outline-primary me-2 mb-2">Over mij</a>
+            <a href="contact.html" class="btn btn-outline-primary me-2 mb-2">contact</a>
+            <a href="projecten.html" class="btn btn-outline-primary me-2 mb-2">Projecten</a>
+        </div>
+
+    </div>
+</header>
+
+
+<div class="p-3 mb-2 bg-primary text-white"></div>
+
+<!--zoekbalk script-->
+<script>
+    const pages = {
+     "index": "index.html",
+        "home": "index.html",
+        "over mij": "overmij.html",
+        "overmij": "overmij.html",
+        "projecten": "projecten.html",
+        "travel": "Travel.html",
+        "contact": "contact.html",
+        "travel and hospitality": "Travel.html"
+
+    };
+
+    document.getElementById("searchForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const query = document.getElementById("searchInput").value.toLowerCase();
+        if (pages[query]) {
+            window.location.href = pages[query];
+        } else {
+            alert("Niet gevonden!");
+        }
+    });
+
+</script>
+
+<div class="row align-items-start">
+<div class="ms-3">
+<div class="col-md-6">
+    <h2>Travel and Hospitality</h2>
+    <p>Ik heb in de periode 2024-2025 de opleiding Travel and Hospitality gevolgd. Dat houdt in dat je in verschillende recreatie branches kan werken zoals een travel agent, baliemedewerker of leidinggevende van een hotel. Ik heb deze opleiding gekozen omdat ik dacht dat het me leuk leek om met mensen samen te werken en verschillende culutren te leren kennen. Ook koos ik ervoor omdat ik altijd al geïntreseerd was in recreaties en vakanties. Maar de opleiding bleek toch niet bij mij te passen. Ik vond het saai omdat het vooral veel herhaling was en het veel minder leuk was dan ik dacht. Ik heb er wel veel van geleerd zoals klantgericht werken en samenwerken met collega's. Maar ik heb besloten om toch verder te gaan met mijn studie in software development omdat ik dat veel leuker vind.</p>
+</div>
+
+<div style="display: flex; justify-content: flex-end;">
+  <img src="../Afbeeldingen/2024.jpeg" style="max-width: 450px; margin-top: -250px; margin-right: 25px;" class="img-fluid">
+</div>
+
+  <div class="mb-3">
+    <h2>Meer informatie over de opleiding</h2>
+<button class="btn btn-primary me-2" onclick="document.getElementById('output').innerHTML = '<h2>Vakkenpakket</h2><p>Bij de opleiding Travel and Hospitality krijg je veel verschillende vakken aangeboden zoals frontoffice, backoffice, Duits, Spaans en landenkennis. Ook heb je elke week een Stay or Go. Dat houdt in dat je elke week of een les krijgt van school over het vak of dat je naar een toeristische attractie toegaat en meer leert over wat je later in de toekomst kan doen.</p>'">Vakkenpakket</button>
+<button class="btn btn-primary me-2" onclick="document.getElementById('output').innerHTML = '<h2>Praktijk</h2><p>Op deze opleiding ga je 40% naar school en 60% op stage. Je gaat op stage in de derde en vierde periode eerste en tweede jaar. En ook eerste en tweede periode derde jaar.</p>'">Praktijk</button>
+<button class="btn btn-primary me-2" onclick="document.getElementById('output').innerHTML = '<h2>Toekomst</h2><p>Met de opleiding Travel & Hospitality kun je werken in de reis- en gastvrijheidssector, bijvoorbeeld bij reisorganisaties, hotels, luchtvaartmaatschappijen of evenementenbedrijven. Je kunt banen doen zoals reismedewerker, steward(ess), hotelmanager, front-office medewerker of eventcoördinator. Het werk draait om service, organiseren en het blij maken van gasten en reizigers.</p>'">toekomst</button>
+<button class="btn btn-primary me-2" onclick="document.getElementById('output').innerHTML = '<h2>Kosten</h2><p>De opleiding Travel & Hospitality bij het Koning Willem I College kost jaarlijks lesgeld of cursusgeld, afhankelijk van je leeftijd en of je BOL of BBL volgt. Daarnaast zijn er schoolkosten voor boeken en materialen, meestal een paar tientjes tot enkele honderden euro’s per jaar. Soms komen er nog vrijwillige kosten bij, zoals excursies of extra activiteiten.</p>'">kosten</button>
+  </div>
+
+  <div id="output" class="mt-3 p-3 border bg-light"></div>
+
+  <script>
+    function toonTekst(tekst) {
+      document.getElementById('output').innerText = tekst;
+    }
+  </script>
+
+<footer class="bg-light text-dark py-4">
+  <div class="container text-center">
+    <p class="mb-2"><strong>Marcin Nowicki</strong></p>
+    <p class="mb-3"><a href="mailto:marcin.nowicki@edu-kw1c.nl" class="text-dark">nowickimarcin672@gmail.com</a></p>
+    <div>
+      <a href="overmij.html" class="btn btn-outline-dark me-2 mb-2">Over mij</a>
+      <a href="contact.html" class="btn btn-outline-dark me-2 mb-2">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
